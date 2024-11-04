@@ -1,0 +1,13 @@
+create or replace PACKAGE produit_API_tests AS
+    -- Test de la fonction d'insertion
+    PROCEDURE test_produit_insert;
+
+    -- Test de la fonction de mise à jour
+    PROCEDURE test_produit_update;
+
+    -- Test de la fonction de suppression
+    PROCEDURE test_produit_delete;
+
+    -- Test de la fonction de sélection
+    PROCEDURE test_produit_select;
+END produit_API_tests;
