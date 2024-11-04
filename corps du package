@@ -1,0 +1,75 @@
+CREATE OR REPLACE PACKAGE BODY produit_API_tests AS
+
+    -- Test de la fonction d'insertion
+    PROCEDURE test_produit_insert IS
+        l_id_produit NUMBER;
+    BEGIN
+        -- Appel de la fonction d'insertion
+        l_id_produit := produit_API.produit_insert('Croissant', 'Viennoiserie', 2.5, 100);
+
+        -- Vérification du résultat
+        IF l_id_produit IS NOT NULL THEN
+            DBMS_OUTPUT.PUT_LINE('Test produit_insert : SUCCÈS. ID du produit : ' || l_id_produit);
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Test produit_insert : ÉCHEC.');
+        END IF;
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Test produit_insert : ERREUR - ' || SQLERRM);
+    END test_produit_insert;
+
+    -- Test de la fonction de mise à jour
+    PROCEDURE test_produit_update IS
+        l_nbre_rangees NUMBER;
+    BEGIN
+        -- Appel de la fonction de mise à jour
+        l_nbre_rangees := produit_API.produit_update(1, 'Pain au chocolat', NULL, 3.0, 80);
+
+        -- Vérification du résultat
+        IF l_nbre_rangees > 0 THEN
+            DBMS_OUTPUT.PUT_LINE('Test produit_update : SUCCÈS. Nombre de lignes affectées : ' || l_nbre_rangees);
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Test produit_update : ÉCHEC.');
+        END IF;
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Test produit_update : ERREUR - ' || SQLERRM);
+    END test_produit_update;
+
+    -- Test de la fonction de suppression
+    PROCEDURE test_produit_delete IS
+        l_nbre_rangees NUMBER;
+    BEGIN
+        -- Appel de la fonction de suppression
+        l_nbre_rangees := produit_API.produit_delete(1);
+
+        -- Vérification du résultat
+        IF l_nbre_rangees > 0 THEN
+            DBMS_OUTPUT.PUT_LINE('Test produit_delete : SUCCÈS. Nombre de lignes supprimées : ' || l_nbre_rangees);
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Test produit_delete : ÉCHEC.');
+        END IF;
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Test produit_delete : ERREUR - ' || SQLERRM);
+    END test_produit_delete;
+
+    -- Test de la fonction de sélection
+    PROCEDURE test_produit_select IS
+        l_JSON_produit VARCHAR2(4000);
+    BEGIN
+        -- Appel de la fonction de sélection
+        l_JSON_produit := produit_API.produit_select(1);
+
+        -- Vérification du résultat
+        IF l_JSON_produit IS NOT NULL THEN
+            DBMS_OUTPUT.PUT_LINE('Test produit_select : SUCCÈS. Détails du produit : ' || l_JSON_produit);
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Test produit_select : ÉCHEC.');
+        END IF;
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Test produit_select : ERREUR - ' || SQLERRM);
+    END test_produit_select;
+
+END produit_API_tests;
