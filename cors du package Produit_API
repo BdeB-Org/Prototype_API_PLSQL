@@ -1,0 +1,93 @@
+CREATE OR REPLACE PACKAGE BODY produit_API AS
+
+    FUNCTION produit_insert(
+        p_nom PRODUIT.nom%TYPE,
+        p_description PRODUIT.description%TYPE,
+        p_prix PRODUIT.prix%TYPE,
+        p_quantite_en_stock PRODUIT.quantite_en_stock%TYPE
+    ) RETURN NUMBER IS
+        l_id_produit PRODUIT.id_produit%TYPE;
+        l_params logger.tab_param;
+    BEGIN
+        -- Logique d'insertion
+        INSERT INTO PRODUIT (nom, description, prix, quantite_en_stock)
+        VALUES (p_nom, p_description, p_prix, p_quantite_en_stock)
+        RETURNING id_produit INTO l_id_produit;
+
+        COMMIT;  -- S'assurer que les changements sont enregistrés
+        RETURN l_id_produit;
+    END produit_insert;
+
+    FUNCTION produit_update(
+        p_id_produit PRODUIT.id_produit%TYPE,
+        p_nom PRODUIT.nom%TYPE,
+        p_description PRODUIT.description%TYPE,
+        p_prix PRODUIT.prix%TYPE,
+        p_quantite_en_stock PRODUIT.quantite_en_stock%TYPE
+    ) RETURN NUMBER IS
+        l_nbre_rangees NUMBER;
+        l_params logger.tab_param;
+    BEGIN
+        -- Logique de mise à jour
+        UPDATE PRODUIT
+        SET nom = p_nom,
+            description = p_description,
+            prix = p_prix,
+            quantite_en_stock = p_quantite_en_stock
+        WHERE id_produit = p_id_produit
+        RETURNING COUNT(*) INTO l_nbre_rangees;
+
+        COMMIT;
+        RETURN l_nbre_rangees;
+    END produit_update;
+
+    FUNCTION produit_delete(
+        p_id_produit PRODUIT.id_produit%TYPE
+    ) RETURN NUMBER IS
+        l_nbre_rangees NUMBER;
+        l_params logger.tab_param;
+    BEGIN
+        IF p_id_produit IS NULL THEN
+            RAISE exception_id_is_null;  -- Lever l'exception
+        END IF;
+
+        l_params := logger.gc_empty_tab_param;
+        logger.append_param(l_params, 'p_id_produit', p_id_produit);
+        logger.log('Début de la suppression du produit', 'produit_delete', NULL, l_params);
+
+        DELETE FROM PRODUIT WHERE id_produit = p_id_produit
+        RETURNING COUNT(*) INTO l_nbre_rangees;
+
+        COMMIT;
+        logger.log('Suppression réussie du produit avec ID: ' || p_id_produit, 'produit_delete', NULL, l_params);
+        RETURN l_nbre_rangees;
+
+    EXCEPTION
+        WHEN exception_id_is_null THEN
+            logger.log('Erreur : L’ID du produit est NULL', 'produit_delete', NULL, l_params);
+            RAISE_APPLICATION_ERROR(-20001, 'ID produit manquant ou invalide.');
+        WHEN OTHERS THEN
+            ROLLBACK;
+            logger.log('Erreur lors de la suppression du produit', 'produit_delete', SQLERRM, l_params);
+            RAISE;
+    END produit_delete;
+
+    FUNCTION produit_select(
+        p_id_produit PRODUIT.id_produit%TYPE
+    ) RETURN VARCHAR2 IS
+        l_JSON_produit VARCHAR2(4000);
+    BEGIN
+        -- Logique de sélection (exemple simple)
+        SELECT JSON_OBJECT('id_produit' VALUE id_produit,
+                           'nom' VALUE nom,
+                           'description' VALUE description,
+                           'prix' VALUE prix,
+                           'quantite_en_stock' VALUE quantite_en_stock)
+        INTO l_JSON_produit
+        FROM PRODUIT
+        WHERE id_produit = p_id_produit;
+
+        RETURN l_JSON_produit;
+    END produit_select;
+
+END produit_API;
