@@ -1,5 +1,5 @@
 CREATE OR REPLACE PACKAGE BODY test_client_api IS
-
+--test si les commits marche correctement
    -- Test de la fonction ins_client
    PROCEDURE ins_client IS
       l_result VARCHAR2(4000);
