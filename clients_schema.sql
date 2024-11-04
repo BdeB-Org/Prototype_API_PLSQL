@@ -16,3 +16,12 @@ INSERT INTO clients (nom, prenom, email, telephone, adresse) VALUES
 ('Dubois', 'Luc', 'luc.dubois@example.com', '4381112222', '789 rue Sherbrooke, Laval, QC'),
 ('Tremblay', 'Julie', 'julie.tremblay@example.com', '4503334444', '321 boulevard de Maisonneuve, Longueuil, QC'),
 ('Gagnon', 'Pierre', 'pierre.gagnon@example.com', '5145556666', '654 rue Saint-Denis, Montréal, QC');
+
+
+BEGIN
+    ut.run('test_client_api'); --ut.run() pour tous les tests
+END;
+
+
+
+
