@@ -1,0 +1,32 @@
+create or replace PACKAGE produit_API AS
+    -- Déclaration de l'exception personnalisée pour ID NULL
+    exception_id_is_null EXCEPTION;
+
+    -- Fonction d'insertion
+    FUNCTION produit_insert(
+        p_Nom PRODUIT.Nom%TYPE,
+        p_description PRODUIT.description%TYPE,
+        p_prix PRODUIT.prix%TYPE,
+        p_quantite_en_stock PRODUIT.quantite_en_stock%TYPE
+    ) RETURN NUMBER;
+
+    -- Fonction de mise à jour
+    FUNCTION produit_update(
+        p_id_produit PRODUIT.id_produit%TYPE,
+        p_nom PRODUIT.nom%TYPE,
+        p_description PRODUIT.description%TYPE,
+        p_prix PRODUIT.prix%TYPE,
+        p_quantite_en_stock PRODUIT.quantite_en_stock%TYPE
+    ) RETURN NUMBER;
+
+    -- Fonction de suppression
+    FUNCTION produit_delete(
+        p_id_produit PRODUIT.id_produit%TYPE
+    ) RETURN NUMBER;
+
+    -- Fonction de sélection
+    FUNCTION produit_select(
+        p_id_produit PRODUIT.id_produit%TYPE
+    ) RETURN VARCHAR2;
+
+END produit_API;
