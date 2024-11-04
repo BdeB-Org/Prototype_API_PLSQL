@@ -20,7 +20,7 @@ create or replace PACKAGE BODY client_API IS
         logger.append_param(l_params, 'p_telephone: ', p_telephone);
         logger.append_param(l_params, 'p_adresse: ', p_adresse);
         logger.append_param(l_params, 'p_test: ', p_test);
-        logger.log('>>>DÉBUT de la procédure', l_scope, NULL, l_params);
+        logger.log('>>>D?BUT de la proc?dure', l_scope, NULL, l_params);
 
         INSERT INTO clients (
             nom, prenom, email, telephone, adresse
@@ -29,13 +29,12 @@ create or replace PACKAGE BODY client_API IS
         ) RETURNING client_id INTO l_client_id;
 
         logger.append_param(l_params, 'l_client_id: ', l_client_id);
-        logger.log('>>>FIN de la procédure', l_scope, NULL, l_params);
+        logger.log('>>>FIN de la proc?dure', l_scope, NULL, l_params);
 
         IF p_test = 'N' THEN
             COMMIT;
         END IF;
-
-        -- Création d'un objet JSON avec l'id_client
+        -- Cr?ation d'un objet JSON avec l'id_client
         SELECT JSON_OBJECT(key 'client_id' value l_client_id)
         INTO l_reponse
         FROM dual;
@@ -67,13 +66,12 @@ create or replace PACKAGE BODY client_API IS
         logger.append_param(l_params, 'p_email: ', p_email);
         logger.append_param(l_params, 'p_telephone: ', p_telephone);
         logger.append_param(l_params, 'p_adresse: ', p_adresse);
-        logger.log('>>>DÉBUT de la procédure', l_scope, NULL, l_params);
+        logger.log('>>>D?BUT de la proc?dure', l_scope, NULL, l_params);
 
         SELECT * INTO r_client
         FROM clients
         WHERE client_id = p_client_id;
-
-        -- Mise à jour du client
+         -- Mise ? jour du client
         UPDATE clients
         SET
             nom = NVL(p_nom, r_client.nom),
@@ -85,13 +83,13 @@ create or replace PACKAGE BODY client_API IS
 
         l_nbre_rangee := SQL%ROWCOUNT;
         logger.append_param(l_params, 'sql%ROWCOUNT: ', l_nbre_rangee);
-        logger.log('>>>FIN de la procédure', l_scope, NULL, l_params);
+        logger.log('>>>FIN de la proc?dure', l_scope, NULL, l_params);
 
         IF p_test = 'N' THEN
             COMMIT;
         END IF;
 
-        -- Création d'un objet JSON avec le nombre de rangées
+        -- Cr?ation d'un objet JSON avec le nombre de rang?es
         SELECT JSON_OBJECT(key 'nbre_rangee' value l_nbre_rangee)
         INTO l_reponse
         FROM dual;
@@ -112,20 +110,20 @@ create or replace PACKAGE BODY client_API IS
 
     BEGIN
         logger.append_param(l_params, 'p_client_id: ', p_client_id);
-        logger.log('>>>DÉBUT de la procédure', l_scope, NULL, l_params);
-
+        logger.log('>>>D?BUT de la proc?dure', l_scope, NULL, l_params);
+        
         DELETE FROM clients
         WHERE client_id = p_client_id;
 
         l_nbre_rangee := SQL%ROWCOUNT;
         logger.append_param(l_params, 'sql%ROWCOUNT: ', l_nbre_rangee);
-        logger.log('>>>FIN de la procédure', l_scope, NULL, l_params);
+        logger.log('>>>FIN de la proc?dure', l_scope, NULL, l_params);
 
         IF p_test = 'N' THEN
             COMMIT;
         END IF;
 
-        -- Création d'un objet JSON avec le nombre de rangées
+        -- Cr?ation d'un objet JSON avec le nombre de rang?es
         SELECT JSON_OBJECT(key 'nbre_rangee' value l_nbre_rangee)
         INTO l_reponse
         FROM dual;
@@ -144,14 +142,13 @@ create or replace PACKAGE BODY client_API IS
 
     BEGIN
         logger.append_param(l_params, 'p_client_id: ', p_client_id);
-        logger.log('>>>DÉBUT de la procédure', l_scope, NULL, l_params);
+        logger.log('>>>D?BUT de la proc?dure', l_scope, NULL, l_params);
 
         SELECT client_id, nom, prenom, email, telephone, adresse
         INTO l_client.client_id, l_client.nom, l_client.prenom, l_client.email, l_client.telephone, l_client.adresse
         FROM clients
         WHERE client_id = p_client_id;
-
-        logger.log('>>>FIN de la procédure', l_scope, NULL, l_params);
+logger.log('>>>FIN de la proc?dure', l_scope, NULL, l_params);
 
         RETURN l_client;
     END get_client;

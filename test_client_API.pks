@@ -8,6 +8,10 @@ create or replace package test_client_api is
    --%test
    procedure ins_client;
 
+   --%test(le nom est null: insertion d'un cours dans la table des cours avec erreur)
+    PROCEDURE ins_client_null;
+    
+    
    --%test
    procedure upd_client;
 
