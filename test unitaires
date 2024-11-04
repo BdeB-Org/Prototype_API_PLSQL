@@ -1,0 +1,6 @@
+BEGIN
+    produit_API_tests.test_produit_insert;
+    produit_API_tests.test_produit_update;
+    produit_API_tests.test_produit_delete;
+    produit_API_tests.test_produit_select;
+END;
