@@ -1,0 +1,172 @@
+create or replace package LOGGER_LOGS_tapi
+is
+
+type LOGGER_LOGS_tapi_rec is record (
+SCOPE  LOGGER_LOGS.SCOPE%type
+,EXTRA  LOGGER_LOGS.EXTRA%type
+,CALL_STACK  LOGGER_LOGS.CALL_STACK%type
+,TEXT  LOGGER_LOGS.TEXT%type
+,TIME_STAMP  LOGGER_LOGS.TIME_STAMP%type
+,USER_NAME  LOGGER_LOGS.USER_NAME%type
+,SID  LOGGER_LOGS.SID%type
+,LOGGER_LEVEL  LOGGER_LOGS.LOGGER_LEVEL%type
+,MODULE  LOGGER_LOGS.MODULE%type
+,ACTION  LOGGER_LOGS.ACTION%type
+,CLIENT_INFO  LOGGER_LOGS.CLIENT_INFO%type
+,UNIT_NAME  LOGGER_LOGS.UNIT_NAME%type
+,ID  LOGGER_LOGS.ID%type
+,LINE_NO  LOGGER_LOGS.LINE_NO%type
+,CLIENT_IDENTIFIER  LOGGER_LOGS.CLIENT_IDENTIFIER%type
+,SCN  LOGGER_LOGS.SCN%type
+);
+type LOGGER_LOGS_tapi_tab is table of LOGGER_LOGS_tapi_rec;
+
+-- insert
+procedure ins (
+p_SCOPE in LOGGER_LOGS.SCOPE%type default null 
+,p_EXTRA in LOGGER_LOGS.EXTRA%type default null 
+,p_CALL_STACK in LOGGER_LOGS.CALL_STACK%type default null 
+,p_TEXT in LOGGER_LOGS.TEXT%type default null 
+,p_TIME_STAMP in LOGGER_LOGS.TIME_STAMP%type
+,p_USER_NAME in LOGGER_LOGS.USER_NAME%type default null 
+,p_SID in LOGGER_LOGS.SID%type default null 
+,p_LOGGER_LEVEL in LOGGER_LOGS.LOGGER_LEVEL%type
+,p_MODULE in LOGGER_LOGS.MODULE%type default null 
+,p_ACTION in LOGGER_LOGS.ACTION%type default null 
+,p_CLIENT_INFO in LOGGER_LOGS.CLIENT_INFO%type default null 
+,p_UNIT_NAME in LOGGER_LOGS.UNIT_NAME%type default null 
+,p_ID in LOGGER_LOGS.ID%type
+,p_LINE_NO in LOGGER_LOGS.LINE_NO%type default null 
+,p_CLIENT_IDENTIFIER in LOGGER_LOGS.CLIENT_IDENTIFIER%type default null 
+,p_SCN in LOGGER_LOGS.SCN%type default null 
+);
+-- update
+procedure upd (
+p_SCOPE in LOGGER_LOGS.SCOPE%type default null 
+,p_EXTRA in LOGGER_LOGS.EXTRA%type default null 
+,p_CALL_STACK in LOGGER_LOGS.CALL_STACK%type default null 
+,p_TEXT in LOGGER_LOGS.TEXT%type default null 
+,p_TIME_STAMP in LOGGER_LOGS.TIME_STAMP%type
+,p_USER_NAME in LOGGER_LOGS.USER_NAME%type default null 
+,p_SID in LOGGER_LOGS.SID%type default null 
+,p_LOGGER_LEVEL in LOGGER_LOGS.LOGGER_LEVEL%type
+,p_MODULE in LOGGER_LOGS.MODULE%type default null 
+,p_ACTION in LOGGER_LOGS.ACTION%type default null 
+,p_CLIENT_INFO in LOGGER_LOGS.CLIENT_INFO%type default null 
+,p_UNIT_NAME in LOGGER_LOGS.UNIT_NAME%type default null 
+,p_ID in LOGGER_LOGS.ID%type
+,p_LINE_NO in LOGGER_LOGS.LINE_NO%type default null 
+,p_CLIENT_IDENTIFIER in LOGGER_LOGS.CLIENT_IDENTIFIER%type default null 
+,p_SCN in LOGGER_LOGS.SCN%type default null 
+);
+-- delete
+procedure del (
+p_ID in LOGGER_LOGS.ID%type
+);
+end LOGGER_LOGS_tapi;
+
+/
+create or replace package body LOGGER_LOGS_tapi
+is
+-- insert
+procedure ins (
+p_SCOPE in LOGGER_LOGS.SCOPE%type default null 
+,p_EXTRA in LOGGER_LOGS.EXTRA%type default null 
+,p_CALL_STACK in LOGGER_LOGS.CALL_STACK%type default null 
+,p_TEXT in LOGGER_LOGS.TEXT%type default null 
+,p_TIME_STAMP in LOGGER_LOGS.TIME_STAMP%type
+,p_USER_NAME in LOGGER_LOGS.USER_NAME%type default null 
+,p_SID in LOGGER_LOGS.SID%type default null 
+,p_LOGGER_LEVEL in LOGGER_LOGS.LOGGER_LEVEL%type
+,p_MODULE in LOGGER_LOGS.MODULE%type default null 
+,p_ACTION in LOGGER_LOGS.ACTION%type default null 
+,p_CLIENT_INFO in LOGGER_LOGS.CLIENT_INFO%type default null 
+,p_UNIT_NAME in LOGGER_LOGS.UNIT_NAME%type default null 
+,p_ID in LOGGER_LOGS.ID%type
+,p_LINE_NO in LOGGER_LOGS.LINE_NO%type default null 
+,p_CLIENT_IDENTIFIER in LOGGER_LOGS.CLIENT_IDENTIFIER%type default null 
+,p_SCN in LOGGER_LOGS.SCN%type default null 
+) is
+begin
+insert into LOGGER_LOGS(
+SCOPE
+,EXTRA
+,CALL_STACK
+,TEXT
+,TIME_STAMP
+,USER_NAME
+,SID
+,LOGGER_LEVEL
+,MODULE
+,ACTION
+,CLIENT_INFO
+,UNIT_NAME
+,ID
+,LINE_NO
+,CLIENT_IDENTIFIER
+,SCN
+) values (
+p_SCOPE
+,p_EXTRA
+,p_CALL_STACK
+,p_TEXT
+,p_TIME_STAMP
+,p_USER_NAME
+,p_SID
+,p_LOGGER_LEVEL
+,p_MODULE
+,p_ACTION
+,p_CLIENT_INFO
+,p_UNIT_NAME
+,p_ID
+,p_LINE_NO
+,p_CLIENT_IDENTIFIER
+,p_SCN
+);end;
+-- update
+procedure upd (
+p_SCOPE in LOGGER_LOGS.SCOPE%type default null 
+,p_EXTRA in LOGGER_LOGS.EXTRA%type default null 
+,p_CALL_STACK in LOGGER_LOGS.CALL_STACK%type default null 
+,p_TEXT in LOGGER_LOGS.TEXT%type default null 
+,p_TIME_STAMP in LOGGER_LOGS.TIME_STAMP%type
+,p_USER_NAME in LOGGER_LOGS.USER_NAME%type default null 
+,p_SID in LOGGER_LOGS.SID%type default null 
+,p_LOGGER_LEVEL in LOGGER_LOGS.LOGGER_LEVEL%type
+,p_MODULE in LOGGER_LOGS.MODULE%type default null 
+,p_ACTION in LOGGER_LOGS.ACTION%type default null 
+,p_CLIENT_INFO in LOGGER_LOGS.CLIENT_INFO%type default null 
+,p_UNIT_NAME in LOGGER_LOGS.UNIT_NAME%type default null 
+,p_ID in LOGGER_LOGS.ID%type
+,p_LINE_NO in LOGGER_LOGS.LINE_NO%type default null 
+,p_CLIENT_IDENTIFIER in LOGGER_LOGS.CLIENT_IDENTIFIER%type default null 
+,p_SCN in LOGGER_LOGS.SCN%type default null 
+) is
+begin
+update LOGGER_LOGS set
+SCOPE = p_SCOPE
+,EXTRA = p_EXTRA
+,CALL_STACK = p_CALL_STACK
+,TEXT = p_TEXT
+,TIME_STAMP = p_TIME_STAMP
+,USER_NAME = p_USER_NAME
+,SID = p_SID
+,LOGGER_LEVEL = p_LOGGER_LEVEL
+,MODULE = p_MODULE
+,ACTION = p_ACTION
+,CLIENT_INFO = p_CLIENT_INFO
+,UNIT_NAME = p_UNIT_NAME
+,LINE_NO = p_LINE_NO
+,CLIENT_IDENTIFIER = p_CLIENT_IDENTIFIER
+,SCN = p_SCN
+where ID = p_ID;
+end;
+-- del
+procedure del (
+p_ID in LOGGER_LOGS.ID%type
+) is
+begin
+delete from LOGGER_LOGS
+where ID = p_ID;
+end;
+end LOGGER_LOGS_tapi;
