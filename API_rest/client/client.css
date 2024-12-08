@@ -1,137 +1,165 @@
+/* Style général */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  form {
-    background-color: #fff;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  input[type="text"] {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 16px;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  button[type="button"] {
-    margin-right: 10px;
-  }
-  
-  button[type="button"]:last-child {
-    margin-right: 0;
-  }
-  button#deleteButton,
-  button#cancelButton {
-    background-color: red; /* Définir la couleur de fond en rouge */
-    color: #fff; /* Couleur du texte en blanc pour le contraste */
-  }
-  
-  button#deleteButton,
-  button#cancelButton:hover {
-    background-color: darkred; /* Couleur de fond au survol */
-  }
-  
-  button#modifyButton,
-  button#saveButton {
-    background-color: green; /* Définir la couleur de fond en vert */
-    color: #fff; /* Couleur du texte en blanc pour le contraste */
-  }
-  
-  button#modifyButton,
-  button#saveButton:hover {
-    background-color: darkgreen; /* Couleur de fond au survol */
-  }
-  
-  button#modifyButton:disabled,
-  button#deleteButton:disabled {
-    background-color: #666;
-  }
-  
-  /* CSS pour la boîte de dialogue */
-  .dialog {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-  details {
-    background-color: #333;
-    color: #f6f6f6;
-    font-size: 1rem;
-  }
-  
-  summary {
-    padding: 0.5em;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    background-color: #666;
-    transition: height 1s ease;
-  }
-  summary:hover,
-  summary:focus {
-    cursor: pointer;
-    background: #007bff;
-  }
-  summary::-webkit-details-marker {
-    display: none;
-  }
-  
-  summary:after {
-    content: "\002B";
-  }
-  
-  details[open] summary {
-    border-bottom: 1px solid #ccc;
-  }
-  
-  details[open] summary:after {
-    content: "\00D7";
-  }
-  
-  details[open] div {
-    padding: 0.5em 1em;
-    background-color: #666;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button#modifyButton,
+button#insertButton,
+button#saveButton {
+  background-color: green;
+}
+
+button#modifyButton:hover,
+button#insertButton:hover,
+button#saveButton:hover {
+  background-color: darkgreen;
+}
+
+button#deleteButton,
+button#cancelButton {
+  background-color: red;
+}
+
+button#deleteButton:hover,
+button#cancelButton:hover {
+  background-color: darkred;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+div#messages {
+  margin: 10px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Détails */
+details {
+  margin-top: 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+summary {
+  padding: 10px;
+  background-color: #666;
+  cursor: pointer;
+}
+
+summary:hover {
+  background-color: #007bff;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #ccc;
+}
+
+details div {
+  padding: 10px;
+  background-color: #666;
+}
+
+/* Boîte de confirmation */
+.dialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+dialog {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+dialog form p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+dialog form button {
+  width: calc(33.33% - 10px);
+  margin: 0 5px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+dialog form button#Oui {
+  background-color: green;
+}
+
+dialog form button#Non {
+  background-color: orange;
+}
+
+dialog form button#Annuler {
+  background-color: red;
+}

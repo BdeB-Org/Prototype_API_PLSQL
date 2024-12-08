@@ -12,23 +12,32 @@
     <form id="jsonForm">
       <!-- Champ caché pour stocker l'état de l'action -->
       <input type="hidden" id="etatAction" name="etatAction" value="" />
-      <label for="ID_CLIENT">Id du client:</label>
-      <input type="text" id="ID_CLIENT" name="ID_CLIENT" />
+
+      <label for="CLIENT_ID">ID du client:</label>
+      <input type="text" id="CLIENT_ID" name="CLIENT_ID" required />
       <button type="button" id="searchButton">Rechercher</button>
       <br />
 
-      <label for="NOM_CLIENT">Nom du client:</label>
-      <input type="text" id="NOM_CLIENT" name="NOM_CLIENT" />
+      <label for="NOM">Nom:</label>
+      <input type="text" id="NOM" name="NOM" required />
       <br />
 
-      <label for="DESCRIPTION_CLIENT">Description du client:</label>
-      <input type="text" id="DESCRIPTION_CLIENT" name="DESCRIPTION_CLIENT" />
+      <label for="PRENOM">Prénom:</label>
+      <input type="text" id="PRENOM" name="PRENOM" required />
       <br />
 
-      <label for="CREDIT">Crédit du client:</label>
-      <input type="text" id="CREDIT" name="CREDIT" />
-      <span id="erreurCREDIT" style="color: red"></span>
+      <label for="EMAIL">Email:</label>
+      <input type="email" id="EMAIL" name="EMAIL" />
       <br />
+
+      <label for="TELEPHONE">Téléphone:</label>
+      <input type="text" id="TELEPHONE" name="TELEPHONE" />
+      <br />
+
+      <label for="ADRESSE">Adresse:</label>
+      <textarea id="ADRESSE" name="ADRESSE"></textarea>
+      <br />
+
       <div id="messages"></div>
       <!-- Div pour les boutons "Modifier", "Supprimer" et "Insérer" -->
       <div id="actionButtons" style="display: block">
@@ -45,15 +54,12 @@
       <details>
         <summary>Aide en ligne</summary>
         <div>
-          Dans un premier temps sélectionner Rechercher<br />
-          ou Insérer
+          Dans un premier temps, sélectionnez "Rechercher" ou "Insérer".
         </div>
       </details>
     </form>
     <!-- Div pour afficher la boite de confirmation d'effacement -->
-    <div id="confirmationDialog" class="dialog">
-
-    </div>
+    <div id="confirmationDialog" class="dialog"></div>
     <dialog id="dialogSupprimer">
       <form method="dialog">
         <p>Voulez-vous vraiment supprimer cet élément ?</p>
