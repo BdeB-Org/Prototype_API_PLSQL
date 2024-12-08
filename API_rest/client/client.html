@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire de client</title>
+    <!-- Inclure le fichier css externe -->
+    <link rel="stylesheet" type="text/css" href="client.css" />
+  </head>
+  <body>
+    <h1>Gestion des Clients</h1>
+    <form id="jsonForm">
+      <!-- Champ caché pour stocker l'état de l'action -->
+      <input type="hidden" id="etatAction" name="etatAction" value="" />
+      <label for="ID_CLIENT">Id du client:</label>
+      <input type="text" id="ID_CLIENT" name="ID_CLIENT" />
+      <button type="button" id="searchButton">Rechercher</button>
+      <br />
+
+      <label for="NOM_CLIENT">Nom du client:</label>
+      <input type="text" id="NOM_CLIENT" name="NOM_CLIENT" />
+      <br />
+
+      <label for="DESCRIPTION_CLIENT">Description du client:</label>
+      <input type="text" id="DESCRIPTION_CLIENT" name="DESCRIPTION_CLIENT" />
+      <br />
+
+      <label for="CREDIT">Crédit du client:</label>
+      <input type="text" id="CREDIT" name="CREDIT" />
+      <span id="erreurCREDIT" style="color: red"></span>
+      <br />
+      <div id="messages"></div>
+      <!-- Div pour les boutons "Modifier", "Supprimer" et "Insérer" -->
+      <div id="actionButtons" style="display: block">
+        <button type="button" id="modifyButton">Modifier</button>
+        <button type="button" id="deleteButton">Supprimer</button>
+        <button type="button" id="insertButton">Insérer</button>
+      </div>
+      <br />
+      <!-- Div pour les boutons de sauvegarde et annulation lors de l'insertion -->
+      <div id="saveCancelButtons" style="display: none">
+        <button type="button" id="saveButton">Sauvegarder</button>
+        <button type="button" id="cancelButton">Annuler</button>
+      </div>
+      <details>
+        <summary>Aide en ligne</summary>
+        <div>
+          Dans un premier temps sélectionner Rechercher<br />
+          ou Insérer
+        </div>
+      </details>
+    </form>
+    <!-- Div pour afficher la boite de confirmation d'effacement -->
+    <div id="confirmationDialog" class="dialog">
+
+    </div>
+    <dialog id="dialogSupprimer">
+      <form method="dialog">
+        <p>Voulez-vous vraiment supprimer cet élément ?</p>
+        <button type="submit" value="oui" id="Oui">Oui</button>
+        <button type="submit" value="non" id="Non">Non</button>
+        <button type="submit" value="annuler" id="Annuler">Annuler</button>
+      </form>
+    </dialog>
+
+    <!-- Inclure le fichier JavaScript externe -->
+    <script src="client.js"></script>
+  </body>
+</html>
