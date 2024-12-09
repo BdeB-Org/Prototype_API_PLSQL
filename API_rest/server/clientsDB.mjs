@@ -1,40 +1,66 @@
+import logger from "./logger.js"
 import oracledb from "oracledb";
 import dbConfig from "./dbconfig.mjs";
 
 /**
  * Récupère un client par son ID.
- * @param {number} clientId - ID du client à récupérer.
+ * @param {number} p_client_id - ID du client à récupérer.
  * @returns {string} - Détails du client en JSON.
  */
-export async function getClient(clientId) {
-  if (!clientId) {
-    throw new Error("Le paramètre clientId est null.");
+export async function getClient(p_client_id) {
+  if (!p_client_id) {
+    throw new Error("Le paramètre p_client_id est null.");
   }
 
   let connection;
   try {
     connection = await oracledb.getConnection(dbConfig);
+    logger.log("info", "Connexion réussie à la base de données Oracle");
+
     const result = await connection.execute(
       `BEGIN
-         :result := client_tapi.get_client(:client_id);
+         :reto := client_API.get_client(:client_id);
        END;`,
       {
-        result: { dir: oracledb.BIND_OUT, type: oracledb.STRING, maxSize: 4000 },
-        client_id: clientId,
+        reto: { dir: oracledb.BIND_OUT, type: oracledb.STRING, maxSize: 4000 },
+        client_id: p_client_id,
       }
     );
-    return result.outBinds.result;
+
+    // Retourne le résultat JSON fourni par la fonction PL/SQL
+    return result.outBinds.reto;
   } catch (err) {
+    logger.log("error", err);
+    logger.log("error", "errorNum: " + err.errorNum);
+
+    // Gestion des erreurs spécifiques (comme un client non trouvé)
+    if (err.errorNum === 20001) {
+      return JSON.stringify({
+        status: "error",
+        statusCode: -2,
+        message: "Aucun client pour cet ID!",
+      });
+    }
+
+    // Gestion des erreurs générales
     return JSON.stringify({
       status: "error",
-      message: "Erreur lors de la récupération du client.",
+      statusCode: -999,
+      message: "Erreur non attrapée dans le catch",
     });
   } finally {
     if (connection) {
-      await connection.close();
+      try {
+        await connection.close();
+        logger.log("info", "Connexion fermée avec succès.");
+      } catch (err) {
+        logger.log("error", "Erreur lors de la fermeture de la connexion :", err);
+      }
     }
   }
 }
+
+
 
 /**
  * Met à jour les informations d'un client.

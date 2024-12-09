@@ -1,0 +1,271 @@
+[33mcommit 016289f8af47d528b789b419e0491db4927c6177[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sat Dec 7 23:31:17 2024 -0500
+
+    html css update
+
+[33mcommit 7ad6507184c92ff70390ed52ac0f7636182d2c94[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sat Dec 7 23:05:48 2024 -0500
+
+    html et css client
+
+[33mcommit ed815b353285fd35699524defb12b8299a6e7489[m
+Author: Taha <124555523+SenTas54@users.noreply.github.com>
+Date:   Sat Nov 9 18:39:55 2024 -0500
+
+    Ajout du script logger log
+
+[33mcommit d99127f1917414f22ef59b3852b5df7b2107e6b1[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sat Nov 9 18:18:13 2024 -0500
+
+    commit organisation du projet
+
+[33mcommit 2cf415e0683466348e8082a7535caa608b947853[m
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 19:40:30 2024 -0500
+
+    ajout commentaire javaDOC test_client_API.pks
+
+[33mcommit e8efa8990c711b5d0e2227be9b30494287cc576b[m
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 19:31:30 2024 -0500
+
+    ajout commentaires javaDoc test_client_API.pkb
+
+[33mcommit c23cd5845d84079c3cf14d2709e86b2ab28e4aad[m
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 19:27:28 2024 -0500
+
+    ajout commentaires javaDoc client_API.pks
+
+[33mcommit 1f1b73e86cd01c7dac9358e47e109269ddc3749d[m
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 19:24:55 2024 -0500
+
+    ajout des commentaires javaDoc
+    
+    j'avais commit l'ajout des commentaires javaDoc dans le mauvais repo
+
+[33mcommit 16b05c1c928e47b71495937e2f1288efdaa47690[m
+Author: Taha <124555523+SenTas54@users.noreply.github.com>
+Date:   Mon Nov 4 19:16:43 2024 -0500
+
+    Update
+
+[33mcommit 95607f5b3d8a18566a3758172de6291893545ae4[m
+Merge: 1b08e14 b0fbb29
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 10:46:57 2024 -0500
+
+    Merge pull request #2 from Kaveesha11/patch-2
+    
+    Create produit_api_tests
+
+[33mcommit 1b08e145674adfb87806f5c0fcc7bfac1aa4478a[m
+Merge: d5b01ae da63b4b
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 10:46:10 2024 -0500
+
+    Merge pull request #3 from Kaveesha11/patch-4
+    
+     corps du package de tests
+
+[33mcommit d5b01ae0f49a4d44ca120cc8c9c422bd94c9e413[m
+Merge: 661847b 9626f11
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 10:45:43 2024 -0500
+
+    Merge pull request #4 from Kaveesha11/patch-3
+    
+    Create creation de produit
+
+[33mcommit 661847b358a4c03be0f54eb8fbee4cc648859176[m
+Merge: 79bde16 9045a2a
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 10:45:32 2024 -0500
+
+    Merge pull request #5 from Kaveesha11/patch-5
+    
+    Create entête du package Produit_API
+
+[33mcommit 79bde16753c7d3aca44c44fa71dead0844da51cb[m
+Merge: b55d439 027cec9
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 10:44:48 2024 -0500
+
+    Merge pull request #7 from Kaveesha11/patch-7
+    
+    Create test unitaires
+
+[33mcommit b55d4391d3b876a5649dc6eeca99479e007097bd[m
+Merge: 1498b14 49934e0
+Author: AkramAym <150968930+AkramAym@users.noreply.github.com>
+Date:   Mon Nov 4 10:44:20 2024 -0500
+
+    Merge pull request #6 from Kaveesha11/patch-6
+    
+    Create cors du package Produit_API
+
+[33mcommit 027cec96ea0ce5d64cad23435e801b2663428100[m
+Author: Kaveesha11 <124697060+Kaveesha11@users.noreply.github.com>
+Date:   Sun Nov 3 23:31:08 2024 -0500
+
+    Create test unitaires
+
+[33mcommit 49934e0a945c1530dd2131a49ec7ca7f7bd16e64[m
+Author: Kaveesha11 <124697060+Kaveesha11@users.noreply.github.com>
+Date:   Sun Nov 3 23:29:42 2024 -0500
+
+    Create cors du package Produit_API
+
+[33mcommit 9045a2a3f9b6581e4bd4fbb2e2101650584a44b3[m
+Author: Kaveesha11 <124697060+Kaveesha11@users.noreply.github.com>
+Date:   Sun Nov 3 23:29:00 2024 -0500
+
+    Create entête du package Produit_API
+
+[33mcommit da63b4b2c1208e44fb8fb011b865d69147e27232[m
+Author: Kaveesha11 <124697060+Kaveesha11@users.noreply.github.com>
+Date:   Sun Nov 3 23:09:14 2024 -0500
+
+    Update corps du package
+
+[33mcommit 31005c2d7ddb0570ac6d291e8b343cbb829500ac[m
+Author: Kaveesha11 <124697060+Kaveesha11@users.noreply.github.com>
+Date:   Sun Nov 3 22:43:36 2024 -0500
+
+    Create corps du package
+
+[33mcommit 9626f112574b9b6bf03bae5b95f7c395b6e6947a[m
+Author: Kaveesha11 <124697060+Kaveesha11@users.noreply.github.com>
+Date:   Sun Nov 3 22:42:10 2024 -0500
+
+    Create creation de produit
+
+[33mcommit b0fbb29a38674da4355e9a8bf3ffe743f4635321[m
+Author: Kaveesha11 <124697060+Kaveesha11@users.noreply.github.com>
+Date:   Sun Nov 3 22:28:06 2024 -0500
+
+    Create produit_api_tests
+
+[33mcommit 1498b142dda414d63f291061240112cd7d20fa6d[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 21:26:39 2024 -0500
+
+    Update clients_schema.sql
+    
+    Update clients_schema.sql
+
+[33mcommit 59fbe44b7a7917e9f7328073a8e47ef614be28e1[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 21:03:26 2024 -0500
+
+    test des tests unitaires
+    
+    5 tests, 0 failed, 0 errored, 0 disabled, 2 warning(s)
+
+[33mcommit b33eda011b118ff2d0497519dd7181121b85a882[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 20:59:27 2024 -0500
+
+    test commit
+    
+    test commit
+
+[33mcommit 4860f3e9bb1cdaa096fb6189d588a91154c09b98[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 20:57:45 2024 -0500
+
+    update finale des tests unitaires pks et pkb
+    
+    update finale des tests unitaires pks et pkb, beaucoup d'ajout surtout dans le body, soit le pkb
+
+[33mcommit 585c2cb66b3afc2602de59a644cbc60ee93a2488[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 18:53:49 2024 -0500
+
+    tests unitaires client_API.pkb  (body)
+    
+    tests unitaire du body
+
+[33mcommit dd998024ee693bc46143c30a2365d56b08b61eda[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 18:52:39 2024 -0500
+
+    tests unitaire du client_API.pks
+    
+    test unitaire du pks
+
+[33mcommit 8b5f5c32d773d0211caab7db9d55fdb075a8f2fa[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 18:16:03 2024 -0500
+
+    Ajout du body
+    
+    ajout du body client_API.pkb, ca ma pris beaucoup de temps et avec des essai/erreurs j'ai reussi a le creer
+
+[33mcommit 6e376c89b723f0cb1f1f21e06407664eac36339e[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 16:54:15 2024 -0500
+
+    update client_API
+    
+    update client_API
+
+[33mcommit ef2be69e231d7bfb47f71222bd0d7aae2f1230cb[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 16:43:38 2024 -0500
+
+    creation du package client_API
+    
+    creation du package client_API avec les 4 fonctions
+
+[33mcommit 5507db1519455ec2262f59c9fc2da3c991aaed13[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 16:40:36 2024 -0500
+
+    Update client_API.pks
+    
+    Update client_API.pks
+
+[33mcommit 939d49fda10ad263209486abcb1758e63dac4897[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 16:28:48 2024 -0500
+
+    create client_API.pks
+    
+    create client_API.pks
+
+[33mcommit b2004c9cf0dd7e0e44358aace27f62d7d8bc1cb7[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 16:08:49 2024 -0500
+
+    remplir l'entité
+    
+    peupler l'entité clients
+
+[33mcommit c570d5ecbfd0186ac0b2f11e3b46edfc22d43bb0[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 16:06:04 2024 -0500
+
+    creation de mon entité
+    
+    création de l'entité clients
+
+[33mcommit e6cb6cc2cedfcc3f346273fe5fde939a17e33faf[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sun Nov 3 16:02:15 2024 -0500
+
+    début tp
+    
+    premier commit
+
+[33mcommit 040e31f6015d9957997105e7c1a988635629dd28[m
+Author: AkramAym <2391145@bdeb.qc.ca>
+Date:   Sat Nov 2 23:45:24 2024 -0400
+
+    ajout fichier vmcommande.sql
+    
+    ajout du fichier vmcommande.sql pour gérer mon entité

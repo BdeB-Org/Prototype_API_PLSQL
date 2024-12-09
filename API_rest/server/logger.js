@@ -1,7 +1,6 @@
-import  winston  from 'winston';
-// Define different colors for each level.
-// Colors make the log message more visible,
-// adding the ability to focus or ignore messages.
+import winston from 'winston';
+
+// Définir différentes couleurs pour chaque niveau
 const colors = {
   error: "red",
   warn: "yellow",
@@ -9,23 +8,25 @@ const colors = {
   http: "magenta",
   debug: "white",
 };
-//Chose the aspect of your log customizing the log format.
+
+// Personnaliser le format du log
 const format = winston.format.combine(
-  // Add the message timestamp with the preferred format
+  // Ajouter un horodatage avec le format préféré
   winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss:ms" }),
-  // Tell Winston that the logs must be colored
+  // Indiquer à Winston que les logs doivent être colorés
   winston.format.colorize({ all: true }),
-  // Define the format of the message showing the timestamp, the level and the message
+  // Définir le format du message en affichant l'horodatage, le niveau et le message
   winston.format.printf(
-    (info) => ${info.timestamp} ${info.level}: ${info.message}
+    (info) => `${info.timestamp} ${info.level}: ${info.message}`
   )
 );
-//Tell winston that you want to link the colors
-//defined above to the severity levels.
+
+// Associer les couleurs définies aux niveaux de sévérité
 winston.addColors(colors);
+
 const logger = winston.createLogger({
   level: "debug",
-  format, //:winston.format.json(),
+  format,
   transports: [
     new winston.transports.Console(),
     new winston.transports.File({
@@ -33,4 +34,5 @@ const logger = winston.createLogger({
     }),
   ],
 });
+
 export default logger;

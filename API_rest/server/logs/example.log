@@ -1,0 +1,16 @@
+2024-12-08 23:29:33:2933 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-08 23:29:33:2933 [31merror[39m: [31mORA-06550: line 2, column 19:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-08 23:29:33:2933 [31merror[39m: [31merrorNum: 6550[39m
+2024-12-08 23:29:33:2933 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-08 23:57:24:5724 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-08 23:57:24:5724 [31merror[39m: [31mORA-06550: line 2, column 19:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-08 23:57:24:5724 [31merror[39m: [31merrorNum: 6550[39m
+2024-12-08 23:57:25:5725 [32minfo[39m: [32mConnexion fermée avec succès.[39m

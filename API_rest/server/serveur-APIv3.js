@@ -1,3 +1,5 @@
+import logger from "./logger.js"
+
 import http from "http";
 import url from "url";
 import { getClient, updateClient, insertClient, deleteClient } from "./clientsDB.mjs";
@@ -16,6 +18,18 @@ async function extractBody(req) {
 }
 
 const server = http.createServer(async (req, res) => {
+  // Ajout des en-têtes CORS
+  res.setHeader("Access-Control-Allow-Origin", "*"); // Autoriser toutes les origines
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"); // Méthodes autorisées
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization"); // En-têtes autorisés
+
+  // Gérer les requêtes OPTIONS (prévols CORS)
+  if (req.method === "OPTIONS") {
+    res.writeHead(204); // Pas de contenu
+    res.end();
+    return;
+  }
+
   const route = url.parse(req.url, true).pathname.split("/");
   const clientId = route[2];
 
