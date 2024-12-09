@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Commandes</title>
+    <link rel="stylesheet" href="commande.css">
+</head>
+<body>
+    <h2>GESTION DES COMMANDES</h2>
+
+    <form id="commandeForm">
+        <label for="client_id">ID Client :</label>
+        <input type="number" id="client_id" name="client_id" required>
+
+        <label for="date_commande">Date :</label>
+        <input type="date" id="date_commande" name="date_commande" required>
+
+        <label for="prix_total">Prix Total :</label>
+        <input type="number" id="prix_total" name="prix_total" step="0.01" required>
+
+        <label for="status">Statut :</label>
+        <select id="status" name="status">
+            <option value="En attente">En attente</option>
+            <option value="En cours">En cours</option>
+            <option value="Livrée">Livrée</option>
+            <option value="Annulée">Annulée</option>
+        </select>
+
+        <button type="button"  id="createCommande">Créer</button>
+        <button type="button" id="readCommande">Lire</button>
+        <button type="button" id="updateCommande">Modifier</button>
+        <button type="button" id="deleteCommande">Supprimer</button>
+    </form>
+
+    <div id="result"></div>
+    <script src="commande.js"></script>
+</body>
+</html>
