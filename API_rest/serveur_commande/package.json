@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "oracledb": "^6.2.0",
+    "winston": "^3.10.0"
+  }
+}

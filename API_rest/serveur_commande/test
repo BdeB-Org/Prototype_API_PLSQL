@@ -1,0 +1,24 @@
+const oracledb = require("oracledb");
+oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
+
+async function run() {
+  const connection = await oracledb.getConnection({
+    user: "your_username", 
+    password: "your_password", 
+    connectString: "localhost/your_service", 
+  });
+
+  const result = await connection.execute(
+    `SELECT client_id, first_name, last_name, email
+     FROM clients
+     WHERE client_id = :id`,
+    [1] 
+  );
+
+  console.log(result.rows); 
+  await connection.close(); 
+}
+
+run().catch(err => {
+  console.error("Erreur lors de l'exécution du test:", err);
+});
