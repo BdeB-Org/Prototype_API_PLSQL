@@ -1,50 +1,84 @@
 import http from "http";
 import url from "url";
-import { getCommande, insertCommande } from "./commandeDB.mjs";
-import logger from "./logger.js";
-import httpStatus from "./http_status.js";
+import { getCommande, insertCommande, updateCommande, deleteCommande } from "./commandeDB.mjs"; // Fonctions pour l'entité commande
+import logger from "./logger.js"; // Logger pour traquer les logs
+import httpStatus from "./http_status.js"; // Codes HTTP
 
 const hostname = "127.0.0.1";
 const port = 3020;
 
-// Serveur HTTP
+// Fonction pour extraire le corps des requêtes
+async function extractBody(req) {
+  return new Promise((resolve, reject) => {
+    let body = "";
+    req.on("data", (chunk) => (body += chunk));
+    req.on("end", () => resolve(body));
+    req.on("error", (err) => reject(err));
+  });
+}
+
+// Fonction pour envoyer une réponse uniforme
+async function envoyer_reponse(res, reponse, httpStatusCode) {
+  res.statusCode = httpStatusCode;
+  res.setHeader("Access-Control-Allow-Origin", "*"); // Autorise toutes les origines
+  res.setHeader("Content-Type", "application/json"); // Format JSON
+  res.end(JSON.stringify(reponse)); // Sérialisation de la réponse en JSON
+}
+
+// Créez le serveur HTTP
 const server = http.createServer(async (req, res) => {
-    const parsedUrl = url.parse(req.url, true);
-    const route = parsedUrl.pathname.split("/")[1];
-    const id = parsedUrl.pathname.split("/")[2];
+  // Gestion des requêtes CORS prévols
+  if (req.method === "OPTIONS") {
+    res.writeHead(204, {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    });
+    res.end();
+    return;
+  }
 
-    res.setHeader("Content-Type", "application/json");
-    res.setHeader("Access-Control-Allow-Origin", "*");
+  // Analyse de l'URL de la requête
+  const route = url.parse(req.url, true).pathname.split("/");
+  const commandeId = route[2]; // ID de commande dans l'URL
 
+  // Log de la requête
+  logger.log("info", `Requête HTTP : ${req.url} - Méthode : ${req.method}`);
+
+  // Gestion des routes pour les commandes
+  if (route[1] === "commande") {
     try {
-        if (route === "commande" && req.method === "GET") {
-            // Gestion de la requête GET
-            const commande = await getCommande(id);
-            res.statusCode = httpStatus.SUCCESS;
-            res.end(JSON.stringify(commande));
-        } else if (route === "commande" && req.method === "POST") {
-            // Gestion de la requête POST
-            let body = "";
-            req.on("data", (chunk) => (body += chunk));
-            req.on("end", async () => {
-                const commandeData = JSON.parse(body);
-                const newCommande = await insertCommande(commandeData);
-                res.statusCode = httpStatus.SUCCESS;
-                res.end(JSON.stringify(newCommande));
-            });
-        } else {
-            // Route non trouvée
-            res.statusCode = httpStatus.NOT_FOUND;
-            res.end(JSON.stringify({ error: "Route introuvable" }));
-        }
+      if (req.method === "GET" && commandeId) {
+        // Récupérer une commande par ID
+        const data = await getCommande(commandeId);
+        envoyer_reponse(res, { status: "success", data }, httpStatus.Success);
+      } else if (req.method === "POST") {
+        // Insérer une nouvelle commande
+        const body = JSON.parse(await extractBody(req));
+        const data = await insertCommande(body);
+        envoyer_reponse(res, { status: "success", data }, httpStatus.Created);
+      } else if (req.method === "PUT" && commandeId) {
+        // Mettre à jour une commande
+        const body = JSON.parse(await extractBody(req));
+        const data = await updateCommande(commandeId, body);
+        envoyer_reponse(res, { status: "success", data }, httpStatus.Success);
+      } else if (req.method === "DELETE" && commandeId) {
+        // Supprimer une commande
+        const data = await deleteCommande(commandeId);
+        envoyer_reponse(res, { status: "success", data }, httpStatus.Success);
+      } else {
+        envoyer_reponse(res, { status: "error", message: "Route non trouvée" }, httpStatus.Not_Found);
+      }
     } catch (error) {
-        // Gestion des erreurs
-        logger.error(error.message);
-        res.statusCode = httpStatus.SERVER_ERROR;
-        res.end(JSON.stringify({ error: "Erreur interne" }));
+      logger.log("error", error.message);
+      envoyer_reponse(res, { status: "error", message: "Erreur interne" }, httpStatus.Server_Error);
     }
+  } else {
+    envoyer_reponse(res, { status: "error", message: "Route non trouvée" }, httpStatus.Not_Found);
+  }
 });
 
+// Lancement du serveur
 server.listen(port, hostname, () => {
-    logger.info(`Serveur actif à http://${hostname}:${port}/`);
+  logger.log("info", `Serveur actif à http://${hostname}:${port}/`);
 });

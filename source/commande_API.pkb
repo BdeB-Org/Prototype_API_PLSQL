@@ -26,6 +26,7 @@ CREATE OR REPLACE PACKAGE BODY commande_API IS
         RETURN l_reponse;
     EXCEPTION
         WHEN OTHERS THEN
+            ROLLBACK;
             RETURN '{"error": "' || SQLERRM || '"}';
     END ins_commande;
 
@@ -57,6 +58,7 @@ CREATE OR REPLACE PACKAGE BODY commande_API IS
         RETURN l_reponse;
     EXCEPTION
         WHEN OTHERS THEN
+            ROLLBACK;
             RETURN '{"error": "' || SQLERRM || '"}';
     END upd_commande;
 
@@ -84,6 +86,7 @@ CREATE OR REPLACE PACKAGE BODY commande_API IS
         RETURN l_reponse;
     EXCEPTION
         WHEN OTHERS THEN
+            ROLLBACK;
             RETURN '{"error": "' || SQLERRM || '"}';
     END del_commande;
 
@@ -103,6 +106,7 @@ CREATE OR REPLACE PACKAGE BODY commande_API IS
         WHEN NO_DATA_FOUND THEN
             RAISE_APPLICATION_ERROR(-20001, 'Commande introuvable');
         WHEN OTHERS THEN
+            ROLLBACK;
             RAISE;
     END get_commande;
 
