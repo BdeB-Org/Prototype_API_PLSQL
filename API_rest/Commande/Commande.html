@@ -4,93 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Commandes</title>
-    <link rel="stylesheet" href="commande.css">
+    <link rel="stylesheet" href="Commande.css"> <!-- Lien avec le fichier CSS -->
 </head>
 <body>
-    <h1>Gestion des Commandes</h1>
+    <div class="container">
+        <h1>Gestion des Commandes</h1>
+        
+        <!-- Formulaire principal -->
+        <form id="commandeForm">
+            <label for="rechercheCommandeId">Rechercher une commande (ID) :</label>
+            <input type="number" id="rechercheCommandeId" placeholder="Entrez l'ID">
+            <button type="button" onclick="lireCommande()">Rechercher</button>
 
-    <form class="formulaire">
-        <label for="id_client">Identifiant Client :</label>
-        <input type="number" id="id_client" placeholder="Entrez l'identifiant du client" required>
+            <label for="dateCommande">Date de Commande :</label>
+            <input type="date" id="dateCommande">
 
-        <label for="date_commande">Date de Commande :</label>
-        <input type="date" id="date_commande" required>
+            <label for="montantTotal">Montant Total :</label>
+            <input type="number" id="montantTotal" step="0.01">
 
-        <label for="montant_total">Montant Total :</label>
-        <input type="number" id="montant_total" step="0.01" placeholder="Entrez le montant total" required>
+            <label for="etatCommande">État de la Commande :</label>
+            <select id="etatCommande">
+                <option value="En cours">En cours</option>
+                <option value="Annulée">Annulée</option>
+                <option value="Complétée">Complétée</option>
+            </select>
 
-        <label for="etat_commande">État de la Commande :</label>
-        <select id="etat_commande">
-            <option value="En attente">En attente</option>
-            <option value="En cours">En cours</option>
-            <option value="Livrée">Livrée</option>
-            <option value="Annulée">Annulée</option>
-        </select>
+            <button type="button" onclick="creerCommande()">Créer</button>
+            <button type="button" onclick="modifierCommande()">Modifier</button>
+            <button type="button" onclick="supprimerCommande()">Supprimer</button>
+        </form>
 
-        <button type="button" id="bouton_creer">Créer</button>
-        <button type="button" id="bouton_lire">Lire</button>
-        <button type="button" id="bouton_modifier">Modifier</button>
-        <button type="button" id="bouton_supprimer">Supprimer</button>
-    </form>
+        <!-- Résultat -->
+        <div id="resultat"></div>
+    </div>
 
-    <div id="resultat"></div>
-
-    <script>
-        const urlAPI = 'http://localhost:3000/api/commande'; // Modifier si nécessaire
-
-        // Créer une commande
-        document.getElementById('bouton_creer').addEventListener('click', async () => {
-            const client = document.getElementById('id_client').value;
-            const date = document.getElementById('date_commande').value;
-            const montant = document.getElementById('montant_total').value;
-            const etat = document.getElementById('etat_commande').value;
-
-            const reponse = await fetch(urlAPI, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ client_id: client, date_commande: date, prix_total: montant, status: etat }),
-            });
-
-            const resultat = await reponse.json();
-            document.getElementById('resultat').textContent = resultat.message || 'Erreur lors de la création.';
-        });
-
-        // Lire une commande
-        document.getElementById('bouton_lire').addEventListener('click', async () => {
-            const idCommande = prompt("Entrez l'identifiant de la commande à lire :");
-
-            const reponse = await fetch(`${urlAPI}/${idCommande}`);
-            const resultat = await reponse.json();
-            document.getElementById('resultat').textContent = JSON.stringify(resultat) || 'Commande introuvable.';
-        });
-
-        // Modifier une commande
-        document.getElementById('bouton_modifier').addEventListener('click', async () => {
-            const idCommande = prompt("Entrez l'identifiant de la commande à modifier :");
-            const montant = prompt('Entrez le nouveau montant total :');
-            const etat = prompt("Entrez le nouvel état de la commande :");
-
-            const reponse = await fetch(`${urlAPI}/${idCommande}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ prix_total: montant, status: etat }),
-            });
-
-            const resultat = await reponse.json();
-            document.getElementById('resultat').textContent = resultat.message || 'Erreur lors de la modification.';
-        });
-
-        // Supprimer une commande
-        document.getElementById('bouton_supprimer').addEventListener('click', async () => {
-            const idCommande = prompt("Entrez l'identifiant de la commande à supprimer :");
-
-            const reponse = await fetch(`${urlAPI}/${idCommande}`, {
-                method: 'DELETE',
-            });
-
-            const resultat = await reponse.json();
-            document.getElementById('resultat').textContent = resultat.message || 'Erreur lors de la suppression.';
-        });
-    </script>
+    <!-- Lien avec le script JavaScript -->
+    <script src="Commande.js"></script>
 </body>
 </html>

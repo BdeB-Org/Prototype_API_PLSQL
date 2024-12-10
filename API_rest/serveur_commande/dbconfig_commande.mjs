@@ -1,6 +1,8 @@
 export default {
-    user: process.env.NODE_ORACLEDB_USER || "scott", 
-    password: process.env.NODE_ORACLEDB_PASSWORD || "oracle", 
-    connectString: "127.0.0.1/freepdb1", 
-    externalAuth: process.env.NODE_ORACLEDB_EXTERNALAUTH ? true : false,
+  user: "scott", // Nom d'utilisateur Oracle
+  password: "oracle", // Mot de passe de l'utilisateur
+  connectString: "127.0.0.1/freepdb1", // Chaîne de connexion à la base de données
+  externalAuth: false, // Authentification externe désactivée
 };
+ 
+
