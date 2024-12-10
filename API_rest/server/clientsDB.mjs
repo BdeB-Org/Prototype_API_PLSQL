@@ -1,11 +1,9 @@
-import logger from "./logger.js"
+import logger from "./logger.js";
 import oracledb from "oracledb";
 import dbConfig from "./dbconfig.mjs";
 
 /**
  * Récupère un client par son ID.
- * @param {number} p_client_id - ID du client à récupérer.
- * @returns {string} - Détails du client en JSON.
  */
 export async function getClient(p_client_id) {
   if (!p_client_id) {
@@ -27,13 +25,9 @@ export async function getClient(p_client_id) {
       }
     );
 
-    // Retourne le résultat JSON fourni par la fonction PL/SQL
     return result.outBinds.reto;
   } catch (err) {
-    logger.log("error", err);
-    logger.log("error", "errorNum: " + err.errorNum);
-
-    // Gestion des erreurs spécifiques (comme un client non trouvé)
+    logger.log("error", `Erreur lors de la récupération : ${err.message}`);
     if (err.errorNum === 20001) {
       return JSON.stringify({
         status: "error",
@@ -41,12 +35,10 @@ export async function getClient(p_client_id) {
         message: "Aucun client pour cet ID!",
       });
     }
-
-    // Gestion des erreurs générales
     return JSON.stringify({
       status: "error",
       statusCode: -999,
-      message: "Erreur non attrapée dans le catch",
+      message: "Erreur non attrapée dans le catch.",
     });
   } finally {
     if (connection) {
@@ -54,19 +46,14 @@ export async function getClient(p_client_id) {
         await connection.close();
         logger.log("info", "Connexion fermée avec succès.");
       } catch (err) {
-        logger.log("error", "Erreur lors de la fermeture de la connexion :", err);
+        logger.log("error", `Erreur lors de la fermeture : ${err.message}`);
       }
     }
   }
 }
 
-
-
 /**
- * Met à jour les informations d'un client.
- * @param {number} clientId - ID du client à mettre à jour.
- * @param {Object} client - Objet contenant les informations du client.
- * @returns {string} - Résultat de la mise à jour en JSON.
+ * Met à jour un client.
  */
 export async function updateClient(clientId, client) {
   let connection;
@@ -89,6 +76,7 @@ export async function updateClient(clientId, client) {
     await connection.commit();
     return result.outBinds.result;
   } catch (err) {
+    logger.log("error", `Erreur lors de la mise à jour : ${err.message}`);
     return JSON.stringify({
       status: "error",
       message: "Erreur lors de la mise à jour du client.",
@@ -101,9 +89,7 @@ export async function updateClient(clientId, client) {
 }
 
 /**
- * Insère un nouveau client dans la base de données.
- * @param {Object} client - Objet contenant les informations du client.
- * @returns {string} - Résultat de l'insertion en JSON.
+ * Insère un client.
  */
 export async function insertClient(client) {
   let connection;
@@ -125,6 +111,7 @@ export async function insertClient(client) {
     await connection.commit();
     return result.outBinds.result;
   } catch (err) {
+    logger.log("error", `Erreur lors de l'insertion : ${err.message}`);
     return JSON.stringify({
       status: "error",
       message: "Erreur lors de l'insertion du client.",
@@ -137,9 +124,7 @@ export async function insertClient(client) {
 }
 
 /**
- * Supprime un client par son ID.
- * @param {number} clientId - ID du client à supprimer.
- * @returns {string} - Résultat de la suppression en JSON.
+ * Supprime un client.
  */
 export async function deleteClient(clientId) {
   let connection;
@@ -157,6 +142,7 @@ export async function deleteClient(clientId) {
     await connection.commit();
     return result.outBinds.result;
   } catch (err) {
+    logger.log("error", `Erreur lors de la suppression : ${err.message}`);
     return JSON.stringify({
       status: "error",
       message: "Erreur lors de la suppression du client.",
