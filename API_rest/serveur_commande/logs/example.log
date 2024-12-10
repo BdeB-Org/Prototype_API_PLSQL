@@ -1,0 +1,181 @@
+2024-12-09 08:53:46:5346 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 08:55:23:5523 [31merror[39m: [31mL'ID de la commande est requis.[39m
+2024-12-09 08:58:11:5811 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 08:58:39:5839 [31merror[39m: [31mL'ID de la commande est requis.[39m
+2024-12-09 09:02:40:240 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 09:03:18:318 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 09:03:18:318 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 09:03:18:318 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 09:08:05:85 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 09:08:10:810 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 09:08:10:810 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 09:08:10:810 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 09:26:09:269 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 09:26:13:2613 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 09:26:13:2613 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 09:26:13:2613 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 09:26:48:2648 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 09:27:26:2726 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 09:27:26:2726 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 09:27:26:2726 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 09:58:18:5818 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 09:58:40:5840 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 09:58:52:5852 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 09:58:58:5858 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 09:58:58:5858 [31merror[39m: [31mErreur lors de la récupération : ORA-06550: line 1, column 18:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 1, column 7:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 09:58:58:5858 [32minfo[39m: [32mConnexion fermée.[39m
+2024-12-09 10:07:53:753 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 10:08:15:815 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 10:08:15:815 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:08:15:815 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 10:08:15:815 [31merror[39m: [31mErreur : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:14:02:142 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 10:14:02:142 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:14:02:142 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 10:14:02:142 [31merror[39m: [31mErreur : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:14:04:144 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 10:14:04:144 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:14:04:144 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 10:14:04:144 [31merror[39m: [31mErreur : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:14:15:1415 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 10:14:15:1415 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:14:15:1415 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 10:14:15:1415 [31merror[39m: [31mErreur : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:14:23:1423 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 10:14:23:1423 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:14:23:1423 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 10:14:23:1423 [31merror[39m: [31mErreur : ORA-06550: line 2, column 21:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 10:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:31:20:3120 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 10:31:27:3127 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 10:31:27:3127 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 1, column 18:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 1, column 7:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:31:27:3127 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 10:33:39:3339 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 10:33:46:3346 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 10:33:46:3346 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 1, column 18:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 1, column 7:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:33:46:3346 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 10:40:09:409 [32minfo[39m: [32mServeur lancé sur http://127.0.0.1:3020/[39m
+2024-12-09 10:49:27:4927 [32minfo[39m: [32mConnexion réussie à la base de données Oracle[39m
+2024-12-09 10:49:27:4927 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 1, column 18:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 1, column 7:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 10:49:27:4927 [32minfo[39m: [32mConnexion fermée avec succès.[39m
+2024-12-09 11:02:37:237 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:05:06:56 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:05:07:57 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:05:09:59 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:07:18:718 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:07:21:721 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:18:14:1814 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:18:19:1819 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:53:41:5341 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
+2024-12-09 11:53:45:5345 [31merror[39m: [31mErreur lors de la récupération de la commande : ORA-06550: line 2, column 28:[39m
+[31mPLS-00382: expression is of wrong type[39m
+[31mORA-06550: line 2, column 17:[39m
+[31mPL/SQL: Statement ignored[39m
+[31mHelp: https://docs.oracle.com/error-help/db/ora-06550/[39m
